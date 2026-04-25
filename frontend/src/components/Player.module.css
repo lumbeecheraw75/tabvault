@@ -1,0 +1,136 @@
+.player {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: var(--header-h);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg2);
+  flex-shrink: 0;
+  gap: 16px;
+}
+
+.songInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 3px;
+}
+
+.artist {
+  font-size: 12px;
+  color: var(--text2);
+}
+
+.badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text3);
+  background: var(--bg4);
+  padding: 1px 7px;
+  border-radius: 10px;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.iconBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 7px;
+  font-size: 12px;
+  color: var(--text3);
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  transition: all 0.15s;
+}
+
+.iconBtn:hover {
+  color: var(--text);
+  border-color: var(--border2);
+}
+
+.iconBtn.active {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-glow);
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.scoreWrap {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  background: #1a1a20;
+}
+
+.atContainer {
+  position: relative;
+  height: 6500px;
+}
+
+.loadOverlay, .errorOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: var(--bg2);
+  color: var(--text2);
+  font-size: 14px;
+  z-index: 10;
+}
+
+.errorOverlay {
+  color: #e87a5a;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--border2);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

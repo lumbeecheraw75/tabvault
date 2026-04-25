@@ -1,0 +1,17 @@
+.app {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.2s ease;
+}
+
+.mainExpanded {
+  margin-left: 0;
+}

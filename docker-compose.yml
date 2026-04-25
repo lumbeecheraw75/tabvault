@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  gpplayer:
+    build: .
+    container_name: tabvault
+    ports:
+      - "3000:3000"
+    volumes:
+      # Map your Guitar Pro file folder here
+      - ./library:/library
+    environment:
+      - PORT=3000
+      - LIBRARY_PATH=/library
+    restart: unless-stopped

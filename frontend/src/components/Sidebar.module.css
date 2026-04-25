@@ -1,0 +1,319 @@
+.sidebar {
+  width: var(--sidebar-w);
+  min-width: var(--sidebar-w);
+  background: var(--bg2);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.collapsed {
+  width: 48px;
+  min-width: 48px;
+  background: var(--bg2);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 12px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  height: var(--header-h);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.toggleBtn {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  color: var(--text3);
+  transition: background 0.15s, color 0.15s;
+}
+
+.toggleBtn:hover {
+  background: var(--bg3);
+  color: var(--text);
+}
+
+.searchRow {
+  padding: 12px 12px 8px;
+  flex-shrink: 0;
+}
+
+.searchWrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0 10px;
+  color: var(--text3);
+  transition: border-color 0.15s;
+}
+
+.searchWrap:focus-within {
+  border-color: var(--border2);
+  color: var(--text2);
+}
+
+.search {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-size: 13px;
+  padding: 8px 0;
+}
+
+.search::placeholder {
+  color: var(--text3);
+}
+
+.dropZone {
+  margin: 0 12px 12px;
+  border: 1px dashed var(--border2);
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: var(--text3);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.dropZone:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-glow);
+}
+
+.dragActive {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-glow);
+}
+
+.uploading {
+  color: var(--accent);
+  font-size: 12px;
+}
+
+.listHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--text3);
+  flex-shrink: 0;
+}
+
+.count {
+  background: var(--bg4);
+  border-radius: 10px;
+  padding: 1px 7px;
+  font-size: 10px;
+}
+
+.fileList {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 6px 12px;
+}
+
+.hint {
+  padding: 20px 12px;
+  color: var(--text3);
+  font-size: 12px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.error {
+  padding: 12px;
+  color: #e87a5a;
+  font-size: 12px;
+}
+
+.fileItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 8px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background 0.1s;
+  position: relative;
+}
+
+.fileItem:hover {
+  background: var(--bg3);
+}
+
+.fileItem:hover .deleteBtn {
+  opacity: 1;
+}
+
+.active {
+  background: var(--bg4);
+}
+
+.active .fileName {
+  color: var(--accent);
+}
+
+.fileIcon {
+  color: var(--text3);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.active .fileIcon {
+  color: var(--accent);
+}
+
+.fileMeta {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.fileName {
+  font-size: 13px;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+}
+
+.fileSize {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text3);
+}
+
+.deleteBtn {
+  opacity: 0;
+  color: var(--text3);
+  padding: 4px;
+  border-radius: 4px;
+  transition: opacity 0.1s, color 0.1s, background 0.1s;
+  flex-shrink: 0;
+}
+
+.deleteBtn:hover {
+  color: #e87a5a;
+  background: rgba(232, 122, 90, 0.12);
+}
+
+.editForm {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: var(--bg3);
+  border-radius: 7px;
+  margin: 2px 6px;
+}
+
+.editInput {
+  background: var(--bg4);
+  border: 1px solid var(--border2);
+  border-radius: 5px;
+  color: var(--text);
+  font-size: 12px;
+  padding: 5px 8px;
+  outline: none;
+  width: 100%;
+}
+
+.editInput:focus {
+  border-color: var(--accent);
+}
+
+.editButtons {
+  display: flex;
+  gap: 5px;
+}
+
+.editSave {
+  flex: 1;
+  padding: 4px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.editSave:hover {
+  background: var(--accent2);
+}
+
+.editCancel {
+  flex: 1;
+  padding: 4px;
+  border-radius: 5px;
+  font-size: 11px;
+  background: var(--bg4);
+  border: 1px solid var(--border2);
+  color: var(--text3);
+  cursor: pointer;
+}
+
+.editCancel:hover {
+  color: var(--text);
+}
+
+.editBtn {
+  opacity: 0;
+  color: var(--text3);
+  padding: 4px;
+  border-radius: 4px;
+  transition: opacity 0.1s, color 0.1s, background 0.1s;
+  flex-shrink: 0;
+}
+
+.editBtn:hover {
+  color: var(--accent);
+  background: var(--accent-glow);
+}
+
+.fileItem:hover .editBtn {
+  opacity: 1;
+}

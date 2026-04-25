@@ -1,0 +1,251 @@
+.controls {
+  height: var(--controls-h);
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+/* Transport */
+.transport {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.stopBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--bg4);
+  border: 1px solid var(--border2);
+  color: var(--text2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+
+.stopBtn:hover:not(:disabled) {
+  background: var(--bg3);
+  color: var(--text);
+}
+
+.stopBtn:disabled { opacity: 0.4; cursor: default; }
+
+.playBtn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  box-shadow: 0 0 16px rgba(232, 103, 58, 0.3);
+}
+
+.playBtn:hover:not(:disabled) {
+  background: var(--accent2);
+  box-shadow: 0 0 24px rgba(232, 103, 58, 0.5);
+  transform: scale(1.04);
+}
+
+.playBtn:disabled { opacity: 0.4; cursor: default; box-shadow: none; }
+
+.pauseBtn {
+  background: var(--bg4);
+  color: var(--accent);
+  box-shadow: none;
+  border: 1px solid var(--accent);
+}
+
+.pauseBtn:hover:not(:disabled) {
+  background: var(--accent-glow);
+  box-shadow: none;
+}
+
+/* Progress */
+.progressSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.progressTrack {
+  height: 4px;
+  background: var(--bg4);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 0.1s linear;
+}
+
+.progressLabels {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text3);
+}
+
+/* Speed */
+.speedSection {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.speedHeader {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text3);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.speedInput {
+  width: 40px;
+  background: var(--bg4);
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 1px 4px;
+  text-align: center;
+  outline: none;
+}
+
+.speedInput:focus { border-color: var(--accent); }
+
+.pct {
+  font-size: 11px;
+  color: var(--text3);
+}
+
+.speedPresets {
+  display: flex;
+  gap: 3px;
+}
+
+.preset {
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text3);
+  background: var(--bg4);
+  border: 1px solid transparent;
+  transition: all 0.12s;
+}
+
+.preset:hover {
+  color: var(--text);
+  border-color: var(--border2);
+}
+
+.presetActive {
+  color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  background: var(--accent-glow) !important;
+}
+
+/* Ramp */
+.rampSection {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.rampHeader {
+  display: flex;
+  align-items: center;
+}
+
+.rampToggle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: var(--text3);
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 9px;
+  transition: all 0.15s;
+}
+
+.rampToggle:hover {
+  color: var(--text);
+  border-color: var(--border2);
+}
+
+.rampActive {
+  color: var(--yellow) !important;
+  border-color: var(--yellow) !important;
+  background: rgba(232, 193, 58, 0.1) !important;
+}
+
+.rampControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rampLabel {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--text3);
+}
+
+.rampInput {
+  width: 36px;
+  background: var(--bg4);
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 1px 3px;
+  text-align: center;
+  outline: none;
+}
+
+.rampInput:focus { border-color: var(--yellow); }
+
+.rampNowBtn {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 5px;
+  background: rgba(232, 193, 58, 0.1);
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+  transition: all 0.15s;
+}
+
+.rampNowBtn:hover:not(:disabled) {
+  background: rgba(232, 193, 58, 0.2);
+}
+
+.rampNowBtn:disabled { opacity: 0.4; cursor: default; }

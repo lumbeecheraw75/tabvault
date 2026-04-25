@@ -1,0 +1,160 @@
+.loopBar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+  height: 40px;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.loopBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text3);
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  transition: all 0.15s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.loopBtn:hover {
+  color: var(--text);
+  border-color: var(--border2);
+}
+
+.loopActive {
+  color: var(--green) !important;
+  border-color: var(--green) !important;
+  background: var(--green-dim) !important;
+}
+
+.track {
+  flex: 1;
+  height: 20px;
+  position: relative;
+  border-radius: 3px;
+  overflow: visible;
+  cursor: default;
+}
+
+.trackBg {
+  position: absolute;
+  inset: 6px 0;
+  background: var(--bg4);
+  border-radius: 2px;
+}
+
+.loopRegion {
+  position: absolute;
+  top: 4px;
+  height: 12px;
+  background: rgba(58, 205, 126, 0.18);
+  border-top: 1.5px solid var(--green);
+  border-bottom: 1.5px solid var(--green);
+  cursor: grab;
+  z-index: 1;
+}
+
+.loopRegion:active {
+  cursor: grabbing;
+}
+
+.playhead {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: var(--accent);
+  border-radius: 1px;
+  transform: translateX(-1px);
+  z-index: 3;
+  pointer-events: none;
+  box-shadow: 0 0 6px var(--accent);
+}
+
+.ticks {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.tick {
+  position: absolute;
+  top: 14px;
+  width: 1px;
+  height: 4px;
+  background: var(--border2);
+  transform: translateX(-0.5px);
+}
+
+.tickLabel {
+  position: absolute;
+  top: 5px;
+  left: 2px;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  color: var(--text3);
+  white-space: nowrap;
+}
+
+.handle {
+  position: absolute;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  z-index: 4;
+  cursor: ew-resize;
+  transform: translateX(-1.5px);
+}
+
+.handleStart {
+  background: var(--green);
+  border-radius: 2px 0 0 2px;
+}
+
+.handleEnd {
+  background: var(--green);
+  border-radius: 0 2px 2px 0;
+}
+
+.handleLabel, .handleLabelEnd {
+  position: absolute;
+  top: -16px;
+  background: var(--green);
+  color: #0a0a0a;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  padding: 1px 4px;
+  border-radius: 3px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.handleLabel {
+  left: 4px;
+}
+
+.handleLabelEnd {
+  right: 4px;
+}
+
+.barInfo {
+  flex-shrink: 0;
+  min-width: 56px;
+  text-align: right;
+}
+
+.barNum {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text2);
+}
