@@ -139,14 +139,11 @@ export default function Player({ file, onMetaLoaded }) {
         setTotalTicks(e.endTick);
         if (e.currentBar !== undefined) setCurrentBar(e.currentBar);
         if (e.endBar !== undefined) setTotalBars(e.endBar);
-
-        // Detect loop restart (bar went backwards significantly)
-        if (e.currentBar !== undefined) {
-          if (e.currentBar < lastBarRef.current - 2) {
-            setLoopCount(c => c + 1);
-          }
-          lastBarRef.current = e.currentBar;
+        // Detect loop restart by tick jumping backwards
+        if (e.currentTick < lastBarRef.current - 1000) {
+          setLoopCount(c => c + 1);
         }
+        lastBarRef.current = e.currentTick;
 
         // Update custom cursor position
         if (e.currentBeat) {
@@ -224,7 +221,20 @@ export default function Player({ file, onMetaLoaded }) {
     };
   }, [initAlphaTab]);
 
-  const togglePlay = () => { if (apiRef.current) apiRef.current.playPause(); };
+  const togglePlay = () => {
+    if (!apiRef.current) return;
+    // Resume suspended audio context on user gesture
+    if (window.AudioContext || window.webkitAudioContext) {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (AudioCtx.prototype && apiRef.current.context) {
+        apiRef.current.context.resume?.();
+      }
+      // Also try resuming any suspended context globally
+      const ctx = new AudioCtx();
+      if (ctx.state === 'suspended') ctx.resume();
+    }
+    apiRef.current.playPause();
+  };
   const stop = () => { if (apiRef.current) { apiRef.current.stop(); setPlaying(false); } };
 
   const handleSpeedChange = (val) => {
