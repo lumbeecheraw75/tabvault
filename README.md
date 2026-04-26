@@ -90,16 +90,25 @@ Metadata (title, artist) is extracted automatically on upload. Click the pencil 
 ## Usage Guide
 
 ### Looping
-1. Click Loop to enable loop mode
-2. Drag the green handles on the timeline to set start and end bars
-3. Drag the green region to slide the entire loop window
+
+**Option 1 — Timeline handles:**
+1. Click **Loop** to enable loop mode
+2. Drag the green handles on the timeline bar to set start and end bars
+3. Drag the green highlighted region to slide the entire loop window
 4. Hit play — playback loops the selected range
+
+**Option 2 — Score selection:**
+- Click and drag directly on the tab notation to highlight notes or bars
+- This selection automatically overrides the timeline handles
+- To go back to timeline handles, click on the score without dragging to clear the selection
 
 ### Speed Ramp
 1. Set your starting speed (e.g. 70%)
-2. Enable Speed Ramp
+2. Enable **Speed Ramp**
 3. Set the step size (e.g. +5%) and target tempo (e.g. 100%)
-4. Speed increases automatically each loop until the target is reached
+4. Speed increases automatically each loop restart until the target is reached
+5. Click **Step now** to advance manually at any time
+
 
 ### Track Mixer
 - Use sliders on the right panel to balance track volumes
